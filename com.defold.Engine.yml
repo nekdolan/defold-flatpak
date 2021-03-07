@@ -1,0 +1,44 @@
+app-id: com.defold.Engine
+runtime: org.freedesktop.Platform
+runtime-version: '20.08'
+sdk: org.freedesktop.Sdk
+command: /app/defold/Defold
+finish-args: 
+  - --share=network
+  - --socket=x11
+  - --socket=wayland
+  - --device=dri
+  - --socket=pulseaudio
+  - --filesystem=home
+modules:
+  - name: files
+    buildsystem: simple
+    build-commands:
+      - install -Dm644 defold48.png /app/share/icons/hicolor/48x48/apps/com.defold.Engine.png
+      - install -Dm644 defold64.png /app/share/icons/hicolor/64x64/apps/com.defold.Engine.png
+      - install -Dm644 defold128.png /app/share/icons/hicolor/128x128/apps/com.defold.Engine.png
+      - install -Dm644 com.defold.Engine.appdata.xml /app/share/metainfo/com.defold.Engine.appdata.xml
+      - install -Dm644 com.defold.Engine.desktop /app/share/applications/com.defold.Engine.desktop
+    sources:
+        - type: file
+          path: res/defold48.png
+        - type: file
+          path: res/defold64.png
+        - type: file
+          path: res/defold128.png
+        - type: file
+          path: res/com.defold.Engine.appdata.xml
+        - type: file
+          path: res/com.defold.Engine.desktop    
+  - name: defold
+    buildsystem: simple
+    build-commands:
+      - mkdir /app/defold
+      - mv * /app/defold/
+    sources:
+      - type: archive
+        url: https://d.defold.com/editor2/channels/editor-alpha/Defold-x86_64-linux.zip
+        sha256: 6699c3f01e0dfcc6c9beaef415704f0eeaf0fff5702a717b95a30df420825a8e
+
+
+

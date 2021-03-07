@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.defold.Engine</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>LicenseRef-proprietary=https://defold.com/license/</project_license>
+  <name>Defold Engine</name>
+  <summary>The ultimate game engine for web and mobile</summary>
+
+  <description>
+    <p>
+      Free to use:
+      Defold is completely free to use with a developer-friendly license for both personal and commercial use.
+    </p>
+    <p>
+      Games:
+      Defold is used by game developers all over the world. It’s a proven tool for games of all genres.
+    </p>
+    <p>
+      Performance first:
+      Built from the ground up with a clear focus on performance. Spend time making games, not waiting for builds.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">com.defold.Engine.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Editor</caption>
+      <image>https://defold.com/images/editor/nosetup-editor.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://defold.com/</url>
+
+  <provides>
+    <binary>Defold</binary>
+  </provides>
+
+  <releases>
+    <release version="1.2.179" date="2021-02-08">
+      <description>
+Our iOS entitlements support was improved with a better way of merging the entitlements.
+
+We’ve added a new error code to the return value of gui.new_texture().
+
+We’ve updated/fixed some issues with regards to callstack output. This should help us pinpoint issues faster in the future.
+
+We now publish the download link to the reference documentation 12 for each release on http://d.defold.com 13.
+
+For native extensions and iOS, we added signing to the ./Frameworks folder (if there is one).
+We also copy any swift libraries found in the frameworks folder to the ./SwiftSupport folder. These changes were made to support the latest Facebook sdk.
+
+When bundling for Windows, bob.jar now only bundles one architecture at a time (32 or 64 bit).
+
+Bob got an argument --exclude-build-folder which is a comma separated string of folders that should not be included in the build. 
+      </description>
+    </release>
+  </releases>
+</component>

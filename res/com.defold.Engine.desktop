@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Defold Engine
+Exec=/app/defold/Defold
+Type=Application
+Icon=com.defold.Engine
+Categories=Game;Development;IDE
