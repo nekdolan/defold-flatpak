@@ -37,22 +37,30 @@
   </provides>
 
   <releases>
-    <release version="1.2.179" date="2021-02-08">
+    <release version="1.2.180" date="2021-03-08">
       <description>
-Our iOS entitlements support was improved with a better way of merging the entitlements.
+        This release we’ve worked on some major improvements to both our OpenGL backend as well as our texture format support.
+        We’ve also added a much more robust Lua parser for our require() detection.
 
-We’ve added a new error code to the return value of gui.new_texture().
+        The sound component now also have a loop count.
 
-We’ve updated/fixed some issues with regards to callstack output. This should help us pinpoint issues faster in the future.
+        Texture compression
+        We now support Basis Universal 4 texture compression.
+        It is a format that transcodes at runtime into a final format that the device supports (e.g. ASTC or ETC2).
+        You can see more about which runtime formats we support in the code 3.
 
-We now publish the download link to the reference documentation 12 for each release on http://d.defold.com 13.
+        This makes it the first time we’ve had GPU texture formats on desktop and HTML5.
+        Not only will it take up less memory on the GPU, but the bundle size will be smaller.
 
-For native extensions and iOS, we added signing to the ./Frameworks folder (if there is one).
-We also copy any swift libraries found in the frameworks folder to the ./SwiftSupport folder. These changes were made to support the latest Facebook sdk.
+        This change also made the old WebP compression obsolete. For backwards compatibility, if your .texture_profiles uses WEBP_LOSSY compression type, it will now instead use BASIS_UASTC. The WEBP compression type now becomes DEFAULT.
 
-When bundling for Windows, bob.jar now only bundles one architecture at a time (32 or 64 bit).
+        OpenGL ES 3 support
+        This release we’ve also updated our OpenGL backend to support OpenGLES 3/WebGL 2 where possible.
+        For those platforms that require it (Android + HTML5), we also support an automatic fallback to OpenGLES 2/WebGL 1.
 
-Bob got an argument --exclude-build-folder which is a comma separated string of folders that should not be included in the build. 
+        Most of the shaders should work as they are, but since it’s a major version update, you might find a case where the shader need a manual update. E.g. we had to update our font-df.fp shader to not use the reserved keyword sample. The change in our case was simply to rename the variable like so vec4 df_sample.
+
+        Also, special thanks @aglitchman for the extensive testing during the alpha period!
       </description>
     </release>
   </releases>

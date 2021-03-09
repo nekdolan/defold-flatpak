@@ -37,8 +37,8 @@ modules:
       - mv * /app/defold/
     sources:
       - type: archive
-        url: https://d.defold.com/editor2/channels/editor-alpha/Defold-x86_64-linux.zip
-        sha256: 6699c3f01e0dfcc6c9beaef415704f0eeaf0fff5702a717b95a30df420825a8e
+        url: https://d.defold.com/archive/editor-alpha/f34b08dc12af1101ae62c6e880b6373a03206174/editor-alpha/editor2/Defold-x86_64-linux.zip
+        sha256: f78e1ec0fc16fad8d75c030b11670742b207765e37cc27f21660256aae927f75
 
 
 
